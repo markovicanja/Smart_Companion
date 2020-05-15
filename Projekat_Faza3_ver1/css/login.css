@@ -1,32 +1,4 @@
 
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-    font-family: Poppins-Regular;
-    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Bold;
-    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Medium;
-    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Montserrat-Bold;
-    src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
-  }
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
   
   * {
       margin: 0px; 
@@ -36,12 +8,10 @@
   
   body, html {
       height: 100%;
-      font-family: Poppins-Regular, sans-serif;
   }
   
   /*---------------------------------------------*/
   a {
-      font-family: Poppins-Regular;
       font-size: 14px;
       line-height: 1.7;
       color: #666666;
@@ -67,7 +37,6 @@
   }
   
   p {
-      font-family: Poppins-Regular;
       font-size: 14px;
       line-height: 1.7;
       color: #666666;
@@ -134,14 +103,12 @@
   /*//////////////////////////////////////////////////////////////////
   [ Utility ]*/
   .txt1 {
-    font-family: Poppins-Regular;
     font-size: 13px;
     line-height: 1.5;
     color: #999999;
   }
   
   .txt2 {
-    font-family: Poppins-Regular;
     font-size: 13px;
     line-height: 1.5;
     color: #666666;
@@ -209,7 +176,6 @@
   }
   
   .login100-form-title {
-    font-family: Poppins-Bold;
     font-size: 24px;
     color: #333333;
     line-height: 1.2;
@@ -230,7 +196,6 @@
   }
   
   .input100 {
-    font-family: Poppins-Medium;
     font-size: 15px;
     line-height: 1.5;
     color: #666666;

@@ -21,9 +21,8 @@
 }
 
 .innerConnectedContainer {
-    background-color: rgba(232, 236, 241, 0.4);
+    background-color: rgba(160, 191, 229, 0.4);
     padding: 5px;
-    border-radius: 15px;
 }
 
 hr {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SMACO | Statistics</title>
+	<title>SMACO | Devices</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/smart_home_icon.png" type="image/x-icon"/>
 
@@ -18,6 +18,9 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- My CSS  -->
+	<link rel="stylesheet" href="css/myCss.css">
 </head>
 <body>
 
@@ -38,13 +41,13 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-items-center ml-auto mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="home.html">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="commands.html">Commands</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="devices.html">Devices</a>
 					</li>
 					<li class="nav-item">
@@ -52,11 +55,61 @@
 					</li>
 				</ul>
 				<div class="social-icons-header">
+					<a href="#">username</a>
 					<a href="index.html"><i class="fas fa-user-times"></i></a>
 				</div>
 			</div>
 		</nav>
 
+		<div class="container fh5co-hero-inner" style="margin-top: 70px;">
+			<div class="connectedContainer">
+				<p>Connected devices</p>
+				<div class="innerConnectedContainer" style="background-color: white; margin-bottom: 5px;">
+					<div class="row">
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Icon</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Device</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Details</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Disconnect</div></div>
+					</div>
+				</div>
+				<div class="innerConnectedContainer">
+					<div class="row">
+						<div class="col-sm-3"><img src="img/tv.png"></div>
+						<div class="col-sm-3"><div class="deviceText">TV</div></div>
+						<div class="col-sm-3"><button class="btn btn-success">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-danger">Disconnect</button></div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3"><img src="img/stove.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Stove</div></div>
+						<div class="col-sm-3"><button class="btn btn-success">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-danger">Disconnect</button></div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3"><img src="img/fridge.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Fridge</div></div>
+						<div class="col-sm-3"><button class="btn btn-success">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-danger">Disconnect</button></div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3"><img src="img/washingmaschine.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Washing maschine</div></div>
+						<div class="col-sm-3"><button class="btn btn-success">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-danger">Disconnect</button></div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3"><img src="img/ac.png"></div>
+						<div class="col-sm-3"><div class="deviceText">A/C</div></div>
+						<div class="col-sm-3"><button class="btn btn-success">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-danger">Disconnect</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div> <!-- first section wrapper -->
 
@@ -64,7 +117,8 @@
 	<!-- ==========================================================================================================
 													  CONTENT
 		 ========================================================================================================== -->
-
+	
+	
 	
 
 	<!-- ==========================================================================================================
@@ -81,10 +135,10 @@
 				<div class="column-2-3">
 					<nav class="footer-nav">
 						<ul>
-                            <a href="home.html">><li>Home</li></a>
+							<a href="home.html"><li>Home</li></a>
                             <a href="commands.html"><li>Commands</li></a>
-                            <a href="devices.html">><li>Devices</li></a>
-                            <a href="statistics.html">><li>Statistics</li></a>
+                            <a href="devices.html"><li>Devices</li></a>
+                            <a href="statistics.html"><li>Statistics</li></a>
 						</ul>
 					</nav>
 				</div>

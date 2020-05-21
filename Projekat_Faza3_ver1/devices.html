@@ -21,6 +21,10 @@
 
 	<!-- My CSS  -->
 	<link rel="stylesheet" href="css/myCss.css">
+
+	<!-- My JS -->
+    <script src="./js/myJS.js"></script>
+
 </head>
 <body>
 
@@ -69,7 +73,7 @@
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Icon</div></div>
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Device</div></div>
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Details</div></div>
-						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Disconnect</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Connection</div></div>
 					</div>
 				</div>
 				<div class="innerConnectedContainer">
@@ -106,6 +110,32 @@
 						<div class="col-sm-3"><div class="deviceText">Air conditioner</div></div>
 						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
 						<div class="col-sm-3"><button class="btn btn-outline-light">Disconnect</button></div>
+					</div>
+				</div>
+
+				<p style="margin-top: 40px;" id="searchParagraph">Search for other devices</p>
+				<button class="btn btn-primary" id="searchButton" onclick="search()">Search</button>
+
+				<div class="innerConnectedContainer" id="found" style="display: none;">
+					<div class="row">
+						<div class="col-sm-3"><img src="img/tv.png"></div>
+						<div class="col-sm-3"><div class="deviceText">TV</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light">Connect</button></div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3"><img src="img/stove.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Stove</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light">Connect</button></div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3"><img src="img/fridge.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Fridge</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light">Connect</button></div>
 					</div>
 				</div>
 			</div>

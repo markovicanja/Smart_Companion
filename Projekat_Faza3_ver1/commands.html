@@ -18,8 +18,14 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- My CSS  -->
+	<link rel="stylesheet" href="css/myCss.css">
+
+	<!-- My JS -->
+    <script src="./js/myJS.js"></script>
 </head>
-<body>
+<body onload="setDeviceForCommand()">
 
 
 <div id="page-wrap">
@@ -38,10 +44,10 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav nav-items-center ml-auto mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="home.html">Home</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="commands.html">Commands</a>
 					</li>
 					<li class="nav-item">
@@ -52,24 +58,37 @@
 					</li>
 				</ul>
 				<div class="social-icons-header">
+					<a href="#">username</a>
 					<a href="index.html"><i class="fas fa-user-times"></i></a>
 				</div>
 			</div>
 		</nav>
 
 
-	</div> <!-- first section wrapper -->
+		<div class="container fh5co-hero-inner" style="margin-top: 70px;">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="deviceDetails" id="dd">
+						<div class="row">
+							<div class="imgHolder">
+								<img src="img/tv.png">
+							</div>
+						</div>
+						<div class="row">
+							<div class="nameHolder">
+								<p>TV LED Fox 32DLE172</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="commandDetails" id="cd"></div>
+				</div>
+			</div>
+		</div>
 
+	</div> 
 
-	<!-- ==========================================================================================================
-													  CONTENT
-		 ========================================================================================================== -->
-
-	
-
-	<!-- ==========================================================================================================
-                                               SECTION 7 - SUB FOOTER
-    ========================================================================================================== -->
 
 	<footer class="footer-outer">
 		<div class="container footer-inner">
@@ -81,10 +100,10 @@
 				<div class="column-2-3">
 					<nav class="footer-nav">
 						<ul>
-                            <a href="home.html">><li>Home</li></a>
+                            <a href="home.html"><li>Home</li></a>
                             <a href="commands.html"><li>Commands</li></a>
-                            <a href="devices.html">><li>Devices</li></a>
-                            <a href="statistics.html">><li>Statistics</li></a>
+                            <a href="devices.html"><li>Devices</li></a>
+                            <a href="statistics.html"><li>Statistics</li></a>
 						</ul>
 					</nav>
 				</div>

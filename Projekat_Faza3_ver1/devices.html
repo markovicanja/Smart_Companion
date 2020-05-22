@@ -26,7 +26,7 @@
     <script src="./js/myJS.js"></script>
 
 </head>
-<body>
+<body onload="setCounter()">
 
 
 <div id="page-wrap">
@@ -69,47 +69,43 @@
 			<div class="connectedContainer">
 				<p>Connected devices</p>
 				<div class="innerConnectedContainer" style="background-color: rgba(202, 213, 228, 0.8); margin-bottom: 5px;">
-					<div class="row">
+					<div class="row" style="margin: auto;">
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Icon</div></div>
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Device</div></div>
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Details</div></div>
 						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Connection</div></div>
 					</div>
 				</div>
-				<div class="innerConnectedContainer">
-					<div class="row">
+				<div class="innerConnectedContainer" id="connectedDevices">
+					<div class="row" id="1001">
 						<div class="col-sm-3"><img src="img/tv.png"></div>
 						<div class="col-sm-3"><div class="deviceText">TV</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Disconnect</button></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('TV')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('TV', 1001)">Disconnect</button></div>
 					</div>
-					<hr>
-					<div class="row">
+					<div class="row" id="1002">
 						<div class="col-sm-3"><img src="img/stove.png"></div>
 						<div class="col-sm-3"><div class="deviceText">Stove</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Disconnect</button></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Stove')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Stove', 1002)">Disconnect</button></div>
 					</div>
-					<hr>
-					<div class="row">
+					<div class="row" id="1003">
 						<div class="col-sm-3"><img src="img/fridge.png"></div>
 						<div class="col-sm-3"><div class="deviceText">Fridge</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Disconnect</button></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Fridge')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Fridge', 1003)">Disconnect</button></div>
 					</div>
-					<hr>
-					<div class="row">
+					<div class="row" id="1004">
 						<div class="col-sm-3"><img src="img/washingmaschine.png"></div>
 						<div class="col-sm-3"><div class="deviceText">Washing machine</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Disconnect</button></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Washing maschine')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Washing maschine', 1004)">Disconnect</button></div>
 					</div>
-					<hr>
-					<div class="row">
+					<div class="row" id="1005">
 						<div class="col-sm-3"><img src="img/ac.png"></div>
 						<div class="col-sm-3"><div class="deviceText">Air conditioner</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Disconnect</button></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Air conditioner')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Air conditioner', 1005)">Disconnect</button></div>
 					</div>
 				</div>
 
@@ -117,25 +113,20 @@
 				<button class="btn btn-primary" id="searchButton" onclick="search()">Search</button>
 
 				<div class="innerConnectedContainer" id="found" style="display: none;">
-					<div class="row">
-						<div class="col-sm-3"><img src="img/tv.png"></div>
-						<div class="col-sm-3"><div class="deviceText">TV</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Connect</button></div>
+					<div class="row" id="1">
+						<div class="col-sm-3"><img src="img/dishwasher.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Dishwasher</div></div>
+						<div class="col-sm-6"><button class="btn btn-outline-light" onclick="connect('Dishwasher', 1)">Connect</button></div>
 					</div>
-					<hr>
-					<div class="row">
-						<div class="col-sm-3"><img src="img/stove.png"></div>
-						<div class="col-sm-3"><div class="deviceText">Stove</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Connect</button></div>
+					<div class="row" id="2">
+						<div class="col-sm-3"><img src="img/heating.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Heating</div></div>
+						<div class="col-sm-6"><button class="btn btn-outline-light" onclick="connect('Heating', 2)">Connect</button></div>
 					</div>
-					<hr>
-					<div class="row">
-						<div class="col-sm-3"><img src="img/fridge.png"></div>
-						<div class="col-sm-3"><div class="deviceText">Fridge</div></div>
-						<div class="col-sm-3"><button class="btn btn-primary">Details</button></div>
-						<div class="col-sm-3"><button class="btn btn-outline-light">Connect</button></div>
+					<div class="row" id="3">
+						<div class="col-sm-3"><img src="img/floor.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Floor heating</div></div>
+						<div class="col-sm-6"><button class="btn btn-outline-light" onclick="connect('Floor heating', 3)">Connect</button></div>
 					</div>
 				</div>
 			</div>

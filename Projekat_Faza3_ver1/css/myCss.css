@@ -43,3 +43,23 @@ hr {
 .innerConnectedContainer .btn {
     margin-top: 6px;
 }
+
+.innerConnectedContainer .row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.imgHolder img {
+    height: 200px !important;
+    width: 200px !important;
+    margin-bottom: 40px;
+}
+
+.nameHolder p {
+    opacity: 1 !important;
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: 650;
+    color: black;
+    width: 80%;
+}

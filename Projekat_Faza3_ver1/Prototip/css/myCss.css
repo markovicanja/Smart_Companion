@@ -10,10 +10,14 @@
 
 .connectedContainer {
     text-align: center;
-    height: 70vh;
+    height: 90vh;
     overflow: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;
+}
+
+.connectedContainer::-webkit-scrollbar {
+    display: none;
 }
 
 .connectedContainer p {

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SMACO | Devices</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/smart_home_icon.png" type="image/x-icon"/>
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- My CSS  -->
+	<link rel="stylesheet" href="css/myCss.css">
+
+	<!-- My JS -->
+    <script src="./js/myJS.js"></script>
+
+</head>
+<body onload="setCounter()">
+
+
+<div id="page-wrap">
+
+
+	<!-- ==========================================================================================================
+													   HERO
+		 ========================================================================================================== -->
+
+	<div id="fh5co-hero-wrapper">
+		<nav class="container navbar navbar-expand-lg main-navbar-nav navbar-light">
+			<a class="navbar-brand" href="">SMACO</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-items-center ml-auto mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="home.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="commands.html">Commands</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="devices.html">Devices</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="statistics.html">Statistics</a>
+					</li>
+				</ul>
+				<div class="social-icons-header">
+					<a href="#">username</a>
+					<a href="index.html"><i class="fas fa-user-times"></i></a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container fh5co-hero-inner" style="margin-top: 70px;">
+			<div class="connectedContainer">
+				<p>Connected devices</p>
+				<div class="innerConnectedContainer" style="background-color: rgba(202, 213, 228, 0.8); margin-bottom: 5px;">
+					<div class="row" style="margin: auto;">
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Icon</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Device</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Details</div></div>
+						<div class="col-sm-3"><div class="deviceText" style="color: black; margin: auto;">Connection</div></div>
+					</div>
+				</div>
+				<div class="innerConnectedContainer" id="connectedDevices">
+					<div class="row" id="1001">
+						<div class="col-sm-3"><img src="img/tv.png"></div>
+						<div class="col-sm-3"><div class="deviceText">TV</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('TV')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('TV', 1001)">Disconnect</button></div>
+					</div>
+					<div class="row" id="1002">
+						<div class="col-sm-3"><img src="img/stove.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Stove</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Stove')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Stove', 1002)">Disconnect</button></div>
+					</div>
+					<div class="row" id="1003">
+						<div class="col-sm-3"><img src="img/fridge.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Fridge</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Fridge')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Fridge', 1003)">Disconnect</button></div>
+					</div>
+					<div class="row" id="1004">
+						<div class="col-sm-3"><img src="img/washingmaschine.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Washing machine</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Washing maschine')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Washing maschine', 1004)">Disconnect</button></div>
+					</div>
+					<div class="row" id="1005">
+						<div class="col-sm-3"><img src="img/ac.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Air conditioner</div></div>
+						<div class="col-sm-3"><button class="btn btn-primary" onclick="command('Air conditioner')">Command</button></div>
+						<div class="col-sm-3"><button class="btn btn-outline-light" onclick="disconnect('Air conditioner', 1005)">Disconnect</button></div>
+					</div>
+				</div>
+
+				<p style="margin-top: 40px;" id="searchParagraph">Search for other devices</p>
+				<button class="btn btn-primary" id="searchButton" onclick="search()">Search</button>
+
+				<div class="innerConnectedContainer" id="found" style="display: none;">
+					<div class="row" id="1">
+						<div class="col-sm-3"><img src="img/dishwasher.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Dishwasher</div></div>
+						<div class="col-sm-6"><button class="btn btn-outline-light" onclick="connect('Dishwasher', 1)">Connect</button></div>
+					</div>
+					<div class="row" id="2">
+						<div class="col-sm-3"><img src="img/heating.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Heating</div></div>
+						<div class="col-sm-6"><button class="btn btn-outline-light" onclick="connect('Heating', 2)">Connect</button></div>
+					</div>
+					<div class="row" id="3">
+						<div class="col-sm-3"><img src="img/floor.png"></div>
+						<div class="col-sm-3"><div class="deviceText">Floor heating</div></div>
+						<div class="col-sm-6"><button class="btn btn-outline-light" onclick="connect('Floor heating', 3)">Connect</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- first section wrapper -->
+
+
+	<!-- ==========================================================================================================
+													  CONTENT
+		 ========================================================================================================== -->
+	
+	
+	
+
+	<!-- ==========================================================================================================
+                                               SECTION 7 - SUB FOOTER
+    ========================================================================================================== -->
+
+	<footer class="footer-outer">
+		<div class="container footer-inner">
+
+			<div class="footer-three-grid wow fadeIn animated" data-wow-delay="0.66s">
+				<div class="column-1-3">
+					<h1>SMACO</h1>
+				</div>
+				<div class="column-2-3">
+					<nav class="footer-nav">
+						<ul>
+							<a href="home.html"><li>Home</li></a>
+                            <a href="commands.html"><li>Commands</li></a>
+                            <a href="devices.html"><li>Devices</li></a>
+                            <a href="statistics.html"><li>Statistics</li></a>
+						</ul>
+					</nav>
+				</div>
+				<div class="column-3-3">
+					<div class="social-icons-footer">
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<span class="border-bottom-footer"></span>
+
+			<p class="copyright">&copy; 2020 SMACO. All rights reserved. Design by Anja Marković i Vukašin Drašković.</p>
+
+		</div>
+	</footer>
+
+
+
+
+</div> <!-- main page wrapper -->
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

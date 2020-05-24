@@ -10,14 +10,11 @@
 
 .connectedContainer {
     text-align: center;
-    height: 90vh;
+    height: 70vh;
     overflow: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;
-}
-
-.connectedContainer::-webkit-scrollbar {
-    display: none;
+    margin-bottom: 100px;
 }
 
 .connectedContainer p {
@@ -54,9 +51,14 @@ hr {
 }
 
 .imgHolder img {
-    height: 200px !important;
-    width: 200px !important;
+    height: 260px !important;
+    width: 260px !important;
     margin-bottom: 40px;
+}
+
+.imgHolder {
+    width: 100%;
+    text-align: center;
 }
 
 .nameHolder p {
@@ -64,6 +66,38 @@ hr {
     margin-bottom: 40px;
     font-size: 40px;
     font-weight: 650;
-    color: black;
-    width: 80%;
+    color: white;
+}
+
+.nameHolder {
+    width: 100%;
+    text-align: center;
+}
+
+label {
+    width: 150px;
+    text-align: right;
+    margin-right: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.submitHolder {
+    text-align: center;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.suggestHolder {
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+}
+
+input {
+    text-align: center;
+    width: 170px;
 }

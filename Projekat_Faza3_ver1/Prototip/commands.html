@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SMACO | Statistics</title>
+	<title>SMACO | Commands</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/smart_home_icon.png" type="image/x-icon"/>
 
@@ -69,20 +69,54 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="deviceDetails" id="dd">
-						<div class="row">
-							<div class="imgHolder">
-								<img src="img/tv.png">
-							</div>
-						</div>
-						<div class="row">
-							<div class="nameHolder">
-								<p>TV LED Fox 32DLE172</p>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<div class="commandDetails" id="cd"></div>
+					<div class="commandDetails" id="cd">
+						<form>
+							<div class="form-group">
+							  <label for="startDate">Start date</label>
+							  <input type="date" id="startDate">
+							</div>
+							<div class="form-group">
+								<label for="startTime">Start time</label>
+								<input type="time" id="startTime">
+							  </div>
+							<div class="form-group">
+								<label for="duration">Duration</label>
+								<input type="number" id="duration">
+							</div>
+							<div class="form-group">
+								<label for="temperature">Temperature</label>
+								<input type="number" id="temperature">
+							</div>
+							<div class="form-group">
+								<label for="variationExtent">Variation extent</label>
+								<input type="number" id="variationExtent">
+							</div>
+							<div class="form-group">
+								<label for="additional">Additional</label>
+								<input type="text" id="additional">
+							</div>
+							<div class="submitHolder">
+								<button type="submit" class="btn btn-primary">Command</button>
+							</div>
+						  </form>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 70px;">
+				<div class="col-sm-4">
+					<div class="suggestHolder">
+						<p>SMACO has ideas! -- ></p>
+					</div>
+				</div>
+				<div class="col-sm-2" style="text-align: center;">
+					<button class="btn btn-success" onclick="izviniAnja()">SMACO ECO</button>
+				</div>
+				<div class="col-sm-2" style="text-align: center;">
+					<button class="btn btn-warning" onclick="izviniAnja()">SMACO COMFY</button>
 				</div>
 			</div>
 		</div>

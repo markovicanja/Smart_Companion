@@ -1,6 +1,10 @@
 imgSRC = [];
-imgSRC["TV"] = "tv.png"; imgSRC["Stove"] = "stove.png"; imgSRC["Fridge"] = "fridge.png"; imgSRC["Air conditioner"] = "ac.png";
+imgSRC["TV"] = "tv.png"; imgSRC["Stove"] = "stove.png"; imgSRC["Air conditioner"] = "ac.png";
 imgSRC["Washing maschine"] = "washingmaschine.png"; imgSRC["Heating"] = "heating.png"; imgSRC["Floor heating"] = "floor.png"; imgSRC["Dishwasher"] = "dishwasher.png";
+
+fullName = [];
+fullName["TV"] = "TV LED Fox 32DLE172"; fullName["Stove"] = "Hotpoint HAE60KS 60cm"; fullName["Air conditioner"] = "MRCOOL DIY 12k BTU 22";
+fullName["Washing maschine"] = "BOSCH Serie | 8 washing machine"; fullName["Heating"] = "Heating"; fullName["Floor heating"] = "Floor heating"; fullName["Dishwasher"] = "Bosch 12 Place Setting Dishwasher";
 
 function search() {
     document.getElementById("found").style.display = "block";
@@ -41,7 +45,7 @@ function connect(device, rowID) {
     $(rowID).remove();
 
     sessionStorage.setItem("numConnected", parseInt(sessionStorage.getItem("numConnected")) + 1);
-    if (sessionStorage.getItem("numConnected") == "8") {
+    if (sessionStorage.getItem("numConnected") == "7") {
         document.getElementById("searchParagraph").textContent = 'You connected all nearby devices';
         document.getElementById("found").style.display = "none";
     }
@@ -55,7 +59,7 @@ function disconnect(device, rowID) {
     rowID = '#' + rowID;
     $(rowID).remove();
 
-    if (sessionStorage.getItem("numConnected") == "8") {
+    if (sessionStorage.getItem("numConnected") == "7") {
         document.getElementById("searchParagraph").textContent = 'Search for other devices';
         document.getElementById("searchButton").style.display = "block";
         document.getElementById("searchButton").style.margin = "auto";
@@ -65,16 +69,34 @@ function disconnect(device, rowID) {
 }
 
 function setCounter() {
-    sessionStorage.setItem("numConnected", "5");
-    sessionStorage.setItem("connectedID", "1005");
+    sessionStorage.setItem("numConnected", "4");
+    sessionStorage.setItem("connectedID", "1004");
     sessionStorage.setItem("disconnectedID", "3");
 }
 
 function command(device) {
     sessionStorage.setItem("device", device);
+    window.location.href = "commands.html";
 }
 
 function setDeviceForCommand() {
     device = sessionStorage.getItem("device");
-    
+
+    document.getElementById("dd").innerHTML = '<div class="row">'+
+                                                    '<div class="nameHolder">'+
+                                                        '<p>' + fullName[device] + '</p>'+
+                                                    '</div>'+
+                                                '</div>'+
+                                                '<div class="row">'+
+                                                    '<div class="imgHolder">'+
+                                                        '<img src="img/' + imgSRC[device] + '">'+
+                                                    '</div>'+
+                                                '</div>';
+
+   if (device == "TV" || device == "Dishwasher" ||  device == "Washing maschine") document.getElementById("variationExtent").disabled = true;
+   if (device == "TV") document.getElementById("temperature").disabled = true;                                              
+}
+
+function izviniAnja() {
+    alert("Izvini Anja nisam jos ovo napravio...");
 }

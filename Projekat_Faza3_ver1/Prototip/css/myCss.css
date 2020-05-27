@@ -105,3 +105,34 @@ input {
     text-align: center;
     width: 170px;
 }
+
+.pHolder {
+    text-align: center;
+    margin: 30px;
+    font-weight: 500;
+    font-size: 60px;
+    color: white;
+    width: 100%;
+}
+
+.bHolder {
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+}
+
+.bHolder button {
+    width: 200px;
+}
+
+.buttonsForStatistics {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.buttonsForStatistics button {
+    width: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+}

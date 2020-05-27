@@ -25,7 +25,7 @@
 	<!-- My JS -->
     <script src="./js/myJS.js"></script>
 </head>
-<body>
+<body onload="setDeviceForCommand()">
 
 
 <div id="page-wrap">
@@ -67,28 +67,60 @@
 
 		<div class="container fh5co-hero-inner" style="margin-top: 70px;">
 			<div class="row">
-				<div class="pHolder">
-					<p>Select device</p>
+				<div class="col-sm-6">
+					<div class="deviceDetails" id="dd">
+						
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="commandDetails" id="cd">
+						<form>
+							<div class="form-group">
+							  <label for="startDate">Start date</label>
+							  <input type="date" id="startDate">
+							</div>
+							<div class="form-group">
+								<label for="startTime">Start time</label>
+								<input type="time" id="startTime">
+							  </div>
+							<div class="form-group">
+								<label for="duration">Duration (h)</label>
+								<input type="number" id="durationHours">
+                            </div>
+                            <div class="form-group">
+								<label for="duration">(min)</label>
+								<input type="number" id="durationMinutes">
+							</div>
+							<div class="form-group">
+								<label for="temperature">Temperature (C)</label>
+								<input type="number" id="temperature">
+							</div>
+							<div class="form-group">
+								<label for="variationExtent">Variation extent</label>
+								<input type="number" id="variationExtent">
+							</div>
+							<div class="form-group">
+								<label for="additional">Additional</label>
+								<input type="text" id="additional">
+							</div>
+							<div class="submitHolder">
+								<button type="submit" class="btn btn-primary">Command</button>
+							</div>
+						  </form>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('TV')">TV</button>
+			<div class="row" style="margin-top: 70px;">
+				<div class="col-sm-4">
+					<div class="suggestHolder">
+						<p>SMACO has ideas! <i class="fas fa-long-arrow-alt-right"></i></p>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('Stove')">Stove</button>
+				<div class="col-sm-2" style="text-align: center;">
+					<button class="btn btn-info" onclick="smacoECO()">SMACO ECO</button>
 				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('Washing maschine')">Washing maschine</button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('Air conditioner')">Air conditioner</button>
+				<div class="col-sm-2" style="text-align: center;">
+					<button class="btn btn-outline-light" onclick="smacoCOMFY()">SMACO COMFY</button>
 				</div>
 			</div>
 		</div>

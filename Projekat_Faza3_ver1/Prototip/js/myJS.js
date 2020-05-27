@@ -76,7 +76,12 @@ function setCounter() {
 
 function command(device) {
     sessionStorage.setItem("device", device);
-    window.location.href = "commands.html";
+    window.location.href = "singleCommand.html";
+}
+
+function statistics(device) {
+    sessionStorage.setItem("device", device);
+    window.location.href = "singleStatistics.html";
 }
 
 function setDeviceForCommand() {
@@ -94,9 +99,114 @@ function setDeviceForCommand() {
                                                 '</div>';
 
    if (device == "TV" || device == "Dishwasher" ||  device == "Washing maschine") document.getElementById("variationExtent").disabled = true;
-   if (device == "TV") document.getElementById("temperature").disabled = true;                                              
+   if (device == "TV" || device == "Dishwasher") document.getElementById("temperature").disabled = true;                                              
 }
 
-function izviniAnja() {
-    alert("Izvini Anja nisam jos ovo napravio...");
+function smacoECO() {
+    if (sessionStorage.getItem('device') == 'TV') {
+        document.getElementById('durationHours').value = 2;
+        document.getElementById('durationMinutes').value = 20;
+        document.getElementById('additional').value = "ask if watching";
+    }
+
+    if (sessionStorage.getItem('device') == 'Stove') {
+        document.getElementById('durationHours').value = 3;
+        document.getElementById('durationMinutes').value = 14;
+        document.getElementById('temperature').value = 140;
+        document.getElementById('variationExtent').value = 7;
+        document.getElementById('additional').value = "place = 2";
+    }
+
+    if (sessionStorage.getItem('device') == 'Washing maschine') {
+        document.getElementById('durationHours').value = 1;
+        document.getElementById('durationMinutes').value = 12;
+        document.getElementById('temperature').value = 40;
+        document.getElementById('additional').value = "quick wash";
+    }
+
+    if (sessionStorage.getItem('device') == 'Air conditioner') {
+        document.getElementById('durationHours').value = 0;
+        document.getElementById('durationMinutes').value = 30;
+        document.getElementById('temperature').value = 22;
+        document.getElementById('variationExtent').value = 9;
+    }
+
+    if (sessionStorage.getItem('device') == 'Heating') {
+        document.getElementById('durationHours').value = 5;
+        document.getElementById('durationMinutes').value = 30;
+        document.getElementById('temperature').value = 23;
+        document.getElementById('variationExtent').value = 11;
+    }
+
+    if (sessionStorage.getItem('device') == 'Floor heating') {
+        document.getElementById('durationHours').value = 6;
+        document.getElementById('durationMinutes').value = 10;
+        document.getElementById('temperature').value = 22;
+        document.getElementById('variationExtent').value = 10;
+    }
+
+    if (sessionStorage.getItem('device') == 'Dishwasher') {
+        document.getElementById('durationHours').value = 1;
+        document.getElementById('durationMinutes').value = 0;
+        document.getElementById('additional').value = "quick wash";
+    }
+}
+
+function smacoCOMFY() {
+    if (sessionStorage.getItem('device') == 'TV') {
+        document.getElementById('durationHours').value = 4;
+        document.getElementById('durationMinutes').value = 33;
+        document.getElementById('additional').value = "volume = 16";
+    }
+
+    if (sessionStorage.getItem('device') == 'Stove') {
+        document.getElementById('durationHours').value = 1;
+        document.getElementById('durationMinutes').value = 20;
+        document.getElementById('temperature').value = 250;
+        document.getElementById('variationExtent').value = 3;
+        document.getElementById('additional').value = "place = 4";
+    }
+
+    if (sessionStorage.getItem('device') == 'Washing maschine') {
+        document.getElementById('durationHours').value = 3;
+        document.getElementById('durationMinutes').value = 5;
+        document.getElementById('temperature').value = 70;
+        document.getElementById('additional').value = "double wash";
+    }
+
+    if (sessionStorage.getItem('device') == 'Air conditioner') {
+        document.getElementById('durationHours').value = 1;
+        document.getElementById('durationMinutes').value = 40;
+        document.getElementById('temperature').value = 26;
+        document.getElementById('variationExtent').value = 4;
+    }
+
+    if (sessionStorage.getItem('device') == 'Heating') {
+        document.getElementById('durationHours').value = 9;
+        document.getElementById('durationMinutes').value = 14;
+        document.getElementById('temperature').value = 25;
+        document.getElementById('variationExtent').value = 3;
+    }
+
+    if (sessionStorage.getItem('device') == 'Floor heating') {
+        document.getElementById('durationHours').value = 10;
+        document.getElementById('durationMinutes').value = 49;
+        document.getElementById('temperature').value = 24;
+        document.getElementById('variationExtent').value = 3;
+    }
+
+    if (sessionStorage.getItem('device') == 'Dishwasher') {
+        document.getElementById('durationHours').value = 2;
+        document.getElementById('durationMinutes').value = 22;
+    }
+}
+
+function setStatisticsInfo() {
+    device = sessionStorage.getItem("device");
+
+    document.getElementById("dd").innerHTML = '<div class="row">'+
+                                                    '<div class="nameHolder">'+
+                                                        '<p style="font-weight: 400;">' + fullName[device] + '</p>'+
+                                                    '</div>'+
+                                                '</div>';
 }

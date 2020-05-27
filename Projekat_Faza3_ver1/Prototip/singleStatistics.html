@@ -24,6 +24,64 @@
 
 	<!-- My JS -->
     <script src="./js/myJS.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+    <script>
+        window.onload = function() {
+        
+        setStatisticsInfo();
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Time usage distribution"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 25,
+                toolTipContent: "<b>{label}</b>: {y}%",
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabelFontSize: 16,
+                indexLabel: "{label} - {y}%",
+                dataPoints: [
+                    { y: 21.08, label: "00:00 - 06:00" },
+                    { y: 8.24, label: "06:00 - 12:00" },
+                    { y: 30.66, label: "12:00 - 18:00" },
+                    { y: 40.02, label: "18:00 - 24:00" }
+                ]
+            }]
+        });
+        chart.render();
+
+            var chart1 = new CanvasJS.Chart("chartContainer1", {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "light1", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Electricity savings"
+            },
+            data: [{
+                type: "column", //change type to bar, line, area, pie, etc
+                //indexLabel: "{y}", //Shows y value on all Data Points
+                indexLabelFontColor: "#5A5757",
+                indexLabelFontSize: 16,
+                indexLabelPlacement: "outside",
+                dataPoints: [
+                    { x: 15, y: 27 },
+                    { x: 21, y: 35, indexLabel: "\u2605 Highest" },
+                    { x: 3, y: 12 },
+                    { x: 9, y: 8, indexLabel: "\u2691 Lowest" }
+                ]
+            }]
+        });
+        chart1.render();
+        
+        }
+        </script>
+
 </head>
 <body>
 
@@ -47,13 +105,13 @@
 					<li class="nav-item">
 						<a class="nav-link" href="home.html">Home</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="commands.html">Commands</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="devices.html">Devices</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="statistics.html">Statistics</a>
 					</li>
 				</ul>
@@ -65,32 +123,27 @@
 		</nav>
 
 
-		<div class="container fh5co-hero-inner" style="margin-top: 70px;">
-			<div class="row">
-				<div class="pHolder">
-					<p>Select device</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('TV')">TV</button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('Stove')">Stove</button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('Washing maschine')">Washing maschine</button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="bHolder">
-					<button class="btn btn-outline-light" onclick="command('Air conditioner')">Air conditioner</button>
-				</div>
-			</div>
+        <div class="container fh5co-hero-inner" style="margin-top: 70px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="deviceDetails" style="width: 100%; margin-top: -20px; margin-bottom: 20px;" id="dd"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id="chartContainer" style="height: 370px; width: 100%; margin-right: 30px;"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="chartContainer1" style="height: 370px; width: 100%; margin-left: 30px;"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="buttonsForStatistics">
+                    <button class="btn btn-outline-light" onclick="">Me</button>
+                    <button class="btn btn-outline-light" onclick="">Nearby</button>
+                    <button class="btn btn-outline-light" onclick="">Global</button>
+                </div>
+            </div>
 		</div>
 
 	</div> 

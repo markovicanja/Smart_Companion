@@ -81,7 +81,6 @@ function command(device) {
 
 function statistics(device) {
     sessionStorage.setItem("device", device);
-    window.location.href = "singleStatistics.html";
 }
 
 function setDeviceForCommand() {
@@ -209,4 +208,41 @@ function setStatisticsInfo() {
                                                         '<p style="font-weight: 400;">' + fullName[device] + '</p>'+
                                                     '</div>'+
                                                 '</div>';
+}
+
+function toTVMe() {
+    window.location.href = "statisticsTVMe.html";
+}
+function toTVNearby() {
+    window.location.href = "statisticsTVNearby.html";
+}
+function toTVGlobal() {
+    window.location.href = "statisticsTVGlobal.html";
+}
+function toStoveMe() {
+    window.location.href = "statisticsStoveMe.html";
+}
+function toStoveNearby() {
+    window.location.href = "statisticsStoveNearby.html";
+}
+function toStoveGlobal() {
+    window.location.href = "statisticsStoveGlobal.html";
+}
+function toWashingMaschineMe() {
+    window.location.href = "statisticsWashingMaschineMe.html";
+}
+function toWashingMaschineNearby() {
+    window.location.href = "statisticsWashingMaschineNearby.html";
+}
+function toWashingMaschineGlobal() {
+    window.location.href = "statisticsWashingMaschineGlobal.html";
+}
+function toAirConditionerMe() {
+    window.location.href = "statisticsAirConditionerMe.html";
+}
+function toAirConditionerNearby() {
+    window.location.href = "statisticsAirConditionerNearby.html";
+}
+function toAirConditionerGlobal() {
+    window.location.href = "statisticsAirConditionerGlobal.html";
 }

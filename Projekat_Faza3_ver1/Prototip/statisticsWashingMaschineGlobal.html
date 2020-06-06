@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SMACO | Commands</title>
+	<title>SMACO | Statistics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/smart_home_icon.png" type="image/x-icon"/>
 
@@ -24,8 +24,82 @@
 
 	<!-- My JS -->
     <script src="./js/myJS.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    
+    <script>
+        window.onload = function() {
+        
+        setStatisticsInfo();
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Time usage distribution"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 25,
+                toolTipContent: "<b>{label}</b>: {y}%",
+                showInLegend: "true",
+                legendText: "{label}",
+                indexLabelFontSize: 16,
+                indexLabel: "{label} - {y}%",
+                dataPoints: [
+                    { y: 31.48, label: "00:00 - 06:00" },
+                    { y: 24.58, label: "06:00 - 12:00" },
+                    { y: 22.41, label: "12:00 - 18:00" },
+                    { y: 23.53, label: "18:00 - 24:00" }
+                ]
+            }]
+        });
+        chart.render();
+
+		percent = [];
+		percent[0] = 24; percent[1] = 28; percent[2] = 22; percent[3] = 19; percent[4] = 24; percent[5] = 19;
+		percent[6] = 30; percent[7] = 21; percent[8] = 22; percent[9] = 24; percent[10] = 28; percent[11] = 29;
+		percent[12] = 19; percent[13] = 29; percent[14] = 27; percent[15] = 21; percent[16] = 22; percent[17] = 22;
+		percent[18] = 25; percent[19] = 29; percent[20] = 17; percent[21] = 22; percent[22] = 21; percent[23] = 27;
+
+		var limit = 24;
+		var y = 0;    
+		var data = [];
+		var dataSeries = { type: "line" };
+		var dataPoints = [];
+		for (var i = 0; i < limit; i += 1) {
+			dataPoints.push({
+				x: i,
+				y: percent[i]
+			});
+		}
+		dataSeries.dataPoints = dataPoints;
+		data.push(dataSeries);
+
+		//Better to construct options first and then pass it as a parameter
+		var options = {
+			zoomEnabled: true,
+			animationEnabled: true,
+			title: {
+				text: "Electricity savings (% per hour)"
+			},
+			axisY: {
+				includeZero: false,
+				lineThickness: 1
+			},
+			data: data  // random data
+		};
+
+		var chart = new CanvasJS.Chart("chartContainer1", options);
+		var startTime = new Date();
+		chart.render();
+		var endTime = new Date();
+
+		}
+        </script>
+
 </head>
-<body onload="setDeviceForCommand()">
+<body>
 
 
 <div id="page-wrap">
@@ -47,13 +121,13 @@
 					<li class="nav-item">
 						<a class="nav-link" href="home.html">Home</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="commands.html">Commands</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="devices.html">Devices</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="statistics.html">Statistics</a>
 					</li>
 				</ul>
@@ -65,64 +139,27 @@
 		</nav>
 
 
-		<div class="container fh5co-hero-inner" style="margin-top: 70px;">
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="deviceDetails" id="dd">
-						
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="commandDetails" id="cd">
-						<form>
-							<div class="form-group">
-							  <label for="startDate">Start date</label>
-							  <input type="date" id="startDate">
-							</div>
-							<div class="form-group">
-								<label for="startTime">Start time</label>
-								<input type="time" id="startTime">
-							  </div>
-							<div class="form-group">
-								<label for="duration">Duration (h)</label>
-								<input type="number" id="durationHours">
-                            </div>
-                            <div class="form-group">
-								<label for="duration">(min)</label>
-								<input type="number" id="durationMinutes">
-							</div>
-							<div class="form-group">
-								<label for="temperature">Temperature (C)</label>
-								<input type="number" id="temperature">
-							</div>
-							<div class="form-group">
-								<label for="variationExtent">Variation extent</label>
-								<input type="number" id="variationExtent">
-							</div>
-							<div class="form-group">
-								<label for="additional">Additional</label>
-								<input type="text" id="additional">
-							</div>
-							<div class="submitHolder">
-								<button type="submit" class="btn btn-primary" onclick="alert('Your command is set!')">Command</button>
-							</div>
-						  </form>
-					</div>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 70px;">
-				<div class="col-sm-4">
-					<div class="suggestHolder">
-						<p>SMACO has ideas! <i class="fas fa-long-arrow-alt-right"></i></p>
-					</div>
-				</div>
-				<div class="col-sm-2" style="text-align: center;">
-					<button class="btn btn-info" onclick="smacoECO()">SMACO ECO</button>
-				</div>
-				<div class="col-sm-2" style="text-align: center;">
-					<button class="btn btn-outline-light" onclick="smacoCOMFY()">SMACO COMFY</button>
-				</div>
-			</div>
+        <div class="container fh5co-hero-inner" style="margin-top: 70px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="deviceDetails" style="width: 100%; margin-top: -20px; margin-bottom: 20px;" id="dd"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id="chartContainer" style="height: 370px; width: 100%; margin-right: 30px;"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="chartContainer1" style="height: 370px; width: 100%; margin-left: 30px;"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="buttonsForStatistics">
+                    <button class="btn btn-outline-light" onclick="toWashingMaschineMe()">Me</button>
+                    <button class="btn btn-outline-light" onclick="toWashingMaschineNearby()">Nearby</button>
+                    <button class="btn btn-outline-light" onclick="toWashingMaschineGlobal()">Global</button>
+                </div>
+            </div>
 		</div>
 
 	</div> 

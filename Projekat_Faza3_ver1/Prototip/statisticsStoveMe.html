@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SMACO | Commands</title>
+	<title>SMACO | Statistics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/smart_home_icon.png" type="image/x-icon"/>
 
@@ -47,39 +47,55 @@
                 indexLabelFontSize: 16,
                 indexLabel: "{label} - {y}%",
                 dataPoints: [
-                    { y: 21.08, label: "00:00 - 06:00" },
-                    { y: 8.24, label: "06:00 - 12:00" },
-                    { y: 30.66, label: "12:00 - 18:00" },
-                    { y: 40.02, label: "18:00 - 24:00" }
+                    { y: 3.04, label: "00:00 - 06:00" },
+                    { y: 46.08, label: "06:00 - 12:00" },
+                    { y: 42.73, label: "12:00 - 18:00" },
+                    { y: 8.15, label: "18:00 - 24:00" }
                 ]
             }]
         });
         chart.render();
 
-            var chart1 = new CanvasJS.Chart("chartContainer1", {
-            animationEnabled: true,
-            exportEnabled: true,
-            theme: "light1", // "light1", "light2", "dark1", "dark2"
-            title:{
-                text: "Electricity savings"
-            },
-            data: [{
-                type: "column", //change type to bar, line, area, pie, etc
-                //indexLabel: "{y}", //Shows y value on all Data Points
-                indexLabelFontColor: "#5A5757",
-                indexLabelFontSize: 16,
-                indexLabelPlacement: "outside",
-                dataPoints: [
-                    { x: 15, y: 27 },
-                    { x: 21, y: 35, indexLabel: "\u2605 Highest" },
-                    { x: 3, y: 12 },
-                    { x: 9, y: 8, indexLabel: "\u2691 Lowest" }
-                ]
-            }]
-        });
-        chart1.render();
-        
-        }
+		percent = [];
+		percent[0] = 11; percent[1] = 15; percent[2] = 10; percent[3] = 14; percent[4] = 11; percent[5] = 19;
+		percent[6] = 33; percent[7] = 39; percent[8] = 33; percent[9] = 32; percent[10] = 37; percent[11] = 27;
+		percent[12] = 18; percent[13] = 19; percent[14] = 14; percent[15] = 28; percent[16] = 33; percent[17] = 30;
+		percent[18] = 15; percent[19] = 16; percent[20] = 17; percent[21] = 17; percent[22] = 22; percent[23] = 13;
+
+		var limit = 24;
+		var y = 0;    
+		var data = [];
+		var dataSeries = { type: "line" };
+		var dataPoints = [];
+		for (var i = 0; i < limit; i += 1) {
+			dataPoints.push({
+				x: i,
+				y: percent[i]
+			});
+		}
+		dataSeries.dataPoints = dataPoints;
+		data.push(dataSeries);
+
+		//Better to construct options first and then pass it as a parameter
+		var options = {
+			zoomEnabled: true,
+			animationEnabled: true,
+			title: {
+				text: "Electricity savings (% per hour)"
+			},
+			axisY: {
+				includeZero: false,
+				lineThickness: 1
+			},
+			data: data  // random data
+		};
+
+		var chart = new CanvasJS.Chart("chartContainer1", options);
+		var startTime = new Date();
+		chart.render();
+		var endTime = new Date();
+
+		}
         </script>
 
 </head>
@@ -139,9 +155,9 @@
             </div>
             <div class="row">
                 <div class="buttonsForStatistics">
-                    <button class="btn btn-outline-light" onclick="">Me</button>
-                    <button class="btn btn-outline-light" onclick="">Nearby</button>
-                    <button class="btn btn-outline-light" onclick="">Global</button>
+                    <button class="btn btn-outline-light" onclick="toStoveMe()">Me</button>
+                    <button class="btn btn-outline-light" onclick="toStoveNearby()">Nearby</button>
+                    <button class="btn btn-outline-light" onclick="toStoveGlobal()">Global</button>
                 </div>
             </div>
 		</div>
